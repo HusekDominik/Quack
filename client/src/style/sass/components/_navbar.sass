@@ -1,0 +1,461 @@
+.navbar
+    width: 100%
+    background: green
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    min-height: $navbar-height
+    position: relative
+    padding: 0 8rem 0 8rem
+    position: fixed
+    top: 0
+    left: 0
+    background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+    background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+    z-index: 1000
+
+    a
+        &.active-navbar
+            img
+                filter: invert(98%) sepia(1%) saturate(2363%) hue-rotate(178deg) brightness(89%) contrast(105%)
+
+
+    .logo
+        position: absolute
+        left: 1rem
+        margin-right: 2rem
+        display: flex
+        justify-content: center
+        align-items: center
+        top: 50%
+        transform: translateY(-50%)
+
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+
+        img
+            width: 42px
+            height: 42px
+            object-fit: cover
+          
+    
+    .navbar-menu
+        position: absolute
+        right: 1.3rem
+        margin-left: 3rem
+        padding-right: 1.3rem
+
+        &__profile-menu
+            position: absolute
+            background: #fff
+            width: 100%
+            z-index: 99
+            width: 250px
+            right: -1.25rem
+            border-top-left-radius: 10px
+            border-bottom-left-radius: 10px
+            border-bottom-right-radius: 10px
+            box-shadow: -10px 10px 14px rgba(0,0,0,0.25)
+            padding: 1rem
+
+            a
+                font-weight: normal
+                font-family: Myriad-Regular
+                color: #3c3c3c
+                text-decoration: none
+                &:hover
+                    text-decoration: underline
+
+            button
+                display: flex
+                flex-direction: row
+                align-items: center
+                padding: 0
+
+                &:hover
+                    text-decoration: underline
+              
+                span
+                    font-weight: normal
+                    font-family: Myriad-Regular
+                    color: #3c3c3c
+                    
+                    &:first-of-type
+                        display: block
+                        width: 100%
+                        text-align: left
+            .logged-as
+                border-bottom: 1px solid #737373
+                text-align: center
+                justify-content: center
+            
+
+        
+            li
+                height: 40px
+                display: flex
+                flex-direction: row
+                align-items: center
+                font-size: 0.9rem
+            
+
+                span
+                    margin: 0 0 0 auto
+
+                b
+                    margin-left: 0.3rem
+
+                button
+                    width: 100%
+                    height: 100%
+                    cursor: pointer
+                    border: none
+                    background: transparent
+
+        .profile-img
+            cursor: pointer
+            margin: 0 0 0 auto
+            position: relative
+
+            img
+                object-fit: cover
+                object-position: center
+
+            &::after
+                content: ''
+                position: absolute
+                background-image: url("../../../src/images/arrow-down.png")
+                background-size: 100% 100%
+                width: 13px
+                height: 13px
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)       
+                top: 50%
+                transform: translateY(-50%)      
+                right: -1.3rem  
+
+
+
+    &__center-content
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        &__home-icon
+            width: 25px
+            height: 25px
+            
+
+            img
+                width: 100%
+                height: 100%
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)
+                
+
+
+        &__input-container
+            position: relative
+            margin-left: 3rem
+            max-width: 270px
+            width: 100%
+
+            .searchbar-status
+                text-align: center
+                padding: 0.2rem
+                color: #3c3c3c
+
+                &:hover
+                    background: transparent
+
+            &__input
+                background: #ffffff
+                display: flex
+                flex-direction: row
+                align-items: center
+                padding-left: 0.4rem
+                border-radius: 5px
+                width: 100%
+                font-family: Myriad-Regular
+
+                
+
+                &:focus-within + ul
+                    display: block
+                
+                &:focus-within
+                    border-bottom-left-radius: 0px
+                    border-bottom-right-radius: 0px
+
+                img
+                    width: 12px
+                    height: 12px
+                    filter: invert(53%) sepia(0%) saturate(274%) hue-rotate(183deg) brightness(94%) contrast(89%)
+                
+                input
+                    border: 0
+                    outline: none
+                    height: 100%
+                    padding: 0.2rem 0.4rem
+                    border-radius: 5px
+                    width: 100%
+
+            ul
+                max-width: 350px
+                width: 100%
+                position: absolute
+                background: #fff
+                display: none
+                z-index: 99
+                font-family: Myriad-Regular
+                border-bottom-left-radius: 5px
+                border-bottom-right-radius: 5px
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25) 
+
+                a
+                    text-decoration: none
+
+                .show-all-users
+                    padding: 0.5rem
+                    text-align: center
+                    background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                    background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                    font-family: Myriad-Regular
+                    color: #fff
+                    border-bottom-left-radius: 5px
+                    border-bottom-right-radius:  5px
+                    text-decoration: none
+                    font-size: 0.9rem
+                    
+                    &:hover
+                        background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                        background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)r
+                        opacity: 0.9
+
+
+
+                &:hover
+                    display: block
+
+                li 
+
+                    &:hover
+                        background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                        background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)r
+
+                    a
+                        color: $secondary-color
+                        text-decoration: none
+                        font-size: 0.9rem
+
+                        .searched-user-navbar
+                            display: flex
+                            padding: 0.5rem 
+                            flex-direction: row
+                            align-items: center
+
+
+                            &__img
+                                width: 30px
+                                height: 30px
+                                border-radius: 100%
+                                margin-right: 0.5rem
+                                border: 1px solid #737373
+
+                                img
+                                    width: 100%
+                                    height: 100%
+                                    border-radius: 100%
+                            
+                 
+
+        &__settings
+            display: flex
+            margin: 0 0 0 auto
+            z-index: 3
+
+            .whiteIcon
+                  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)
+
+            
+
+            &__requests
+                position: relative
+
+            &__bell, &__requests
+                position: relative
+
+                &__number
+                    position: absolute
+                    border-radius: 100%
+                    left: -25px
+                    top: -5px
+                    z-index: 3
+                    background: #ed1c24
+                    font-size: 0.75rem
+                    color: #fff
+                    width: 18px
+                    height: 18px
+                    padding: 0.3rem
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    font-family: Myriad-Regular
+                    letter-spacing: 0.2px
+                    user-select: none
+
+                ul
+                    position: absolute
+                    min-width: 300px
+                    background: #fff
+                    min-height: 80px
+                    top: 131%
+                    left: 50%
+                    transform: translateX(-50%)
+                    z-index: 4
+                    display: none
+                    flex-direction: column
+                    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25)
+                    border-radius: 10px
+                    padding-top: 0.6rem
+                   
+                    
+                    li
+                        display: flex
+                        flex-direction: row
+                        margin: 1rem 0
+                        padding: 0 0.7rem
+                        cursor: default
+
+
+                        .global-notification
+                            width: 100%
+                            cursor: default
+
+                            h4
+                                font-size: 0.6rem
+                                margin-top: 0.2rem
+                                margin-left: 2.5px
+                                font-weight: normal
+
+                            p
+                                margin-left: 2.575rem
+
+                        .notification-left
+
+                            p
+                                font-size: 0.6rem
+                                text-align: center
+
+
+                            &__notification-img
+                                border-radius: 100%
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                align-items: center
+
+                                span
+                                    font-size: 0.6rem
+                             
+                                
+
+                                img
+                                    border-radius: 100%
+                                    width: 30px
+                                    height: 30px
+                                    object-fit: cover
+
+                        .notification-text
+                            margin-left: 0.7rem
+                            line-height: 1.5
+                            font-size: 0.9rem
+                            width: 100%
+
+                       
+                            span
+                                font-family: Myriad-Bold
+
+                        div
+                            margin: 0
+
+                    h6
+                        text-align: center
+                        margin: 1rem 0
+
+                    &.active
+                        display: flex
+
+                        &::before
+                            content: ''
+                            top: -10px
+                            width: 26px
+                            height: 20px
+                            position: absolute
+                            left: 50%
+                            transform: translateX(-50%)
+                            clip-path: polygon(50% 0%, 0 70%, 100% 70%)
+                            background: #fff
+                    
+                    .close-bell-button
+                        margin: 0 0 0 auto
+                        background: transparent
+                        border: 0
+                        cursor: pointer
+                    
+                    .delete-bell-button
+                        background: transparent
+                        border: 0
+                        cursor: pointer
+                        background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                        background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                        border-bottom-left-radius: 10px
+                        border-bottom-right-radius: 10px
+                        color: #fff
+                        font-size: 0.9rem
+                        padding: 0.5rem 0
+                        text-decoration: none
+                        text-align: center
+                        font-family: Myriad-Bold
+
+
+
+                    h2
+                        font-family: Myriad-Bold
+                        font-weight: normal
+                        text-align: center
+                        padding-bottom: 0.6rem
+                        position: relative
+
+                        &::after
+                            content: ''
+                            height: 1px
+                            background: #737373
+                            width: 80%
+                      
+                            position: absolute
+                            bottom: 0
+                            left: 50%
+                            transform: translateX(-50%)
+                            
+                    
+                    .notifications-content
+                        margin: 0
+                        
+                    
+
+                    
+
+
+            div
+                margin-left: 1rem
+                cursor: pointer
+
+                img.whiteIcon
+                    width: 25px
+                    height: 25px
+                
+
+                    &.active
+                        filter: invert(93%) sepia(10%) saturate(137%) hue-rotate(166deg) brightness(95%) contrast(95%)

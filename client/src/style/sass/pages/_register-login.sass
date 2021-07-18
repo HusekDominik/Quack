@@ -1,0 +1,362 @@
+.login-register-page
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    min-height: 100vh
+    background-image: url("../../../src/images/form-background.png")
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: 100%
+    // MEDIA QUERY NA MENŠÍ BACKGROUND
+
+    @media screen and (max-width: 1285px)
+        background-image: url("../../../src/images/form-background-smaller.png")
+        background-size: cover
+  
+    
+    
+
+    h1 
+        font-weight: bold
+        margin: 0
+        font-family:  Myriad-Bold
+
+
+    h2 
+        text-align: center
+
+
+    p 
+        font-size: 0.90rem
+        font-weight: 100
+        line-height: 1.6
+        letter-spacing: 0.5px
+        margin: 1rem 30px
+        font-family: Myriad-Regular
+        
+
+
+    span 
+        font-size: 12px
+
+
+    a 
+        color: #333
+        font-size: 14px
+        text-decoration: none
+        margin: 15px 0
+
+
+    button
+        border-radius: 20px
+        border: 2px solid #FFFFFF
+        color: #FFFFFF
+        font-size: 12px
+        font-weight: bold
+        padding: 12px 45px
+        letter-spacing: 1px
+        text-transform: uppercase
+        transition: transform 80ms ease-in
+        cursor: pointer
+        font-family: Myriad-Semi
+
+
+    button:active 
+        transform: scale(0.95)
+
+
+    button:focus 
+        outline: none
+    
+    button[type="submit"]
+        background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+
+
+    button.ghost 
+        background-color: transparent
+        border-color: #FFFFFF
+
+
+    form 
+        background-color: #FFFFFF
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding: 0 3rem
+        height: 100%
+        text-align: center
+
+
+    input 
+        background-color: #fff
+        border: none
+        padding: 0.6rem 1rem
+        margin: 0.5rem 0
+        width: 100%
+        border: 2px solid #4c91ae
+        border-radius: 20px
+        outline: none
+        font-size: 0.85rem
+        max-width: 300px
+        font-family: Myriad-Regular
+
+  
+
+    .container-login-register 
+        background-color: #fff
+        border-radius: 20px
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25)
+        position: relative
+        overflow: hidden
+        width: 868px
+        max-width: 100%
+        min-height: 540px
+
+
+    .form-container 
+        position: absolute
+        top: 0
+        height: 100%
+        transition: all 0.6s ease-in-out
+
+
+    .sign-in-container 
+        left: 0
+        width: 60% // DEFAULT 50%
+        z-index: 2
+
+        input
+            &:last-of-type
+                margin-bottom: 0
+
+        h1
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 2.0rem
+            background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            padding-bottom: 1rem
+            font-family:  Myriad-Bold
+        
+        button[type="submit"]
+            background: linear-gradient(to bottom right, #4b9fa1, #4c99a7)
+
+        .forgotten-password, .resend-email-verification
+            max-width: 300px
+            width: 100%
+            text-align: left
+            margin-bottom: 1rem
+
+            button
+                background: transparent
+                color: black
+                text-transform: none
+                font-family: Myriad-Regular
+                padding: 0
+                margin: 0 0 0 1rem
+                font-size: 0.8rem
+                background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                border: none
+                border-radius: 0px
+                font-weight: normal    
+
+
+    .container-login-register.right-panel-active .sign-in-container 
+        transform: translateX(66.7%) // default 100%
+
+
+    .sign-up-container 
+        left: 0
+        width: 60%
+        opacity: 0
+        z-index: 1
+
+        h1
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 2.0rem
+            background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            padding-bottom: 1rem
+            font-family:  Myriad-Bold
+
+        button[type="submit"]
+            background: linear-gradient(to bottom right, #4c8db2, #4b86b4)    
+        
+        .fullname-div
+            width: 100%
+            max-width: 300px
+            
+            input
+                width: calc(50% - 0.75rem)
+                &:first-of-type
+                    margin-right: 1.5rem
+        
+        .sign-up-buttons
+            margin: 0.5rem 0 1.5rem 0 
+            width: 100%
+            max-width: 300px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+
+            button
+                padding: 0.75rem 1.4rem
+                border: 2px solid #4c91ae
+                color: #777777
+                background: transparent
+                font-weight: normal
+                letter-spacing: 0px
+                text-transform: capitalize
+                font-size: 0.85rem
+                font-family: Myriad-Regular
+
+                &.active-button
+                    color: #fff
+                    font-weight: bold
+                
+                &.active-button.male
+                    background: linear-gradient(to bottom right, #4c90af, #4c8bb3)
+                &.active-button.female
+                    background: linear-gradient(to bottom right, #4c8ab2, #4b88b4)
+                &.active-button.other
+                    background: linear-gradient(to bottom right, #4a84b5, #4a81b6)    
+
+
+
+    .container-login-register.right-panel-active .sign-up-container 
+        transform: translateX(66.7%)
+        opacity: 1
+        z-index: 5
+        animation: show 0.6s
+
+
+    @keyframes show 
+        0%, 49.99% 
+            opacity: 0
+            z-index: 1
+        
+        
+        50%, 100% 
+            opacity: 1
+            z-index: 5
+        
+
+
+    .overlay-container 
+        position: absolute
+        top: 0
+        left: 60%
+        width: 40%
+        height: 100%
+        overflow: hidden
+        transition: transform 0.6s ease-in-out
+        z-index: 100
+
+
+    .container-login-register.right-panel-active .overlay-container
+        transform: translateX(-150%) // default 100%
+
+
+    .overlay 
+        background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+        background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: 0 0
+        color: #FFFFFF
+        position: relative
+        left: -100%
+        height: 100%
+        width: 200%
+        transform: translateX(0)
+        transition: transform 0.6s ease-in-out
+
+
+    .container-login-register.right-panel-active .overlay 
+        transform: translateX(50%)
+
+
+    .overlay-panel 
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding: 0 2rem
+        text-align: center
+        top: 0
+        height: 100%
+        width: 50%
+        transform: translateX(0)
+        transition: transform 0.6s ease-in-out
+
+
+    .overlay-left 
+        transform: translateX(-20%)
+        h1
+            font-size: 2rem
+            font-family:  Myriad-Bold
+
+
+    .container-login-register.right-panel-active .overlay-left 
+        transform: translateX(0)
+
+
+    .overlay-right 
+        right: 0
+        transform: translateX(0)
+
+        h1
+            font-size: 2rem
+            font-family:  Myriad-Bold
+
+
+    .container-login-register.right-panel-active .overlay-right 
+        transform: translateX(20%)
+
+    .forgotten-password-container
+        width: 60%
+        z-index: 3
+        transform: translateX(-100%)
+        transition: all 600ms ease-in-out
+        background: transparent
+        box-shadow: 2px 0 100px #fff
+
+        h1
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 2.0rem
+            background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            padding-bottom: 1rem
+            font-family:  Myriad-Bold
+
+        &.active
+            transform: translateX(0%)
+        
+        button[type="submit"]
+            margin-top: 1rem
+            background: linear-gradient(to bottom right, #4b9fa1, #4c99a7)
+
+        button[type="button"]
+            background: transparent
+            position: absolute
+            top: 0.5rem
+            left: 1rem
+            padding: 0
+            display: flex
+            align-items: center
+
+
+            img
+                width: 28px
+                height: 28px
+
+
+

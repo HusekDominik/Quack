@@ -1,0 +1,97 @@
+.delete-modal
+    position: fixed
+    height: 100vh
+    width: 100%
+    background-color: rgba(0,0,0,0.6)
+    z-index: 1000
+    top: 0
+    left: 0
+
+
+    &__modal
+        position: relative
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: #fff
+        width: 100%
+        max-width: 450px
+        min-width: 300úx
+        min-height: 270px
+        padding: 1rem 1rem 1rem 1rem
+        border-radius: 0.6rem
+
+        .button-group
+            position: absolute
+            bottom: 1rem
+            right: 1rem
+
+        h4
+            text-align: center
+            font-weight: normal
+            font-family:  Myriad-Bold
+            padding-top: 3rem
+            font-size: 1.3rem
+            margin-bottom: 0.8rem
+            color: #3c3c3c
+        p
+            text-align: center
+            font-size: 1.1rem
+            line-height: 1.6
+            max-width: 340px
+            margin: 0 auto
+            color: #3c3c3c
+            span
+                background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+        
+        button
+            outline: none
+            border: 0
+            font-family: Myriad-Semi
+            cursor: pointer
+            padding: 0.7rem 1.4rem 
+            border-radius: 0.5rem
+
+
+            &:first-of-type
+               
+                margin-right: 1rem
+                background: #d3d3d3
+                color: #3c3c3c
+                
+            &:last-of-type
+                color: #fff
+                background: -webkit-linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6)
+                background: linear-gradient(to bottom right, #48b58b, #48a994, #4c9ea2, #4c8fb0, #4a81b6) 
+                
+
+        &__close
+            display: flex
+
+          
+            img
+                margin-left: auto
+                width: 15px
+                height: 15px
+                cursor: pointer
+                filter: invert(55%) sepia(62%) saturate(340%) hue-rotate(139deg) brightness(88%) contrast(83%) 
+
+        &__bin-container
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            top: -50px
+            border-radius: 100%
+            height: 100px
+            width: 100px
+            display: flex
+            justify-content: center
+            background: #fff
+            align-items: center
+          
+         
+
+            img
+                filter: invert(55%) sepia(62%) saturate(340%) hue-rotate(139deg) brightness(88%) contrast(83%) 

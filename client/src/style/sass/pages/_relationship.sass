@@ -1,0 +1,51 @@
+.relationship-page
+    padding-top: $navbar-height
+    
+    &__container
+        min-height: 500px
+        max-width: 1000px
+        margin: 2.5rem auto 0 auto
+        background: #fff
+        border-radius: 1rem
+        padding: 1.5rem 0
+
+        h4
+            text-align: center
+            position: relative
+            font-size: 1.5rem
+            color: $primary-color
+            font-weight: normal
+            font-family: Myriad-Bold
+            margin-bottom: 1rem
+
+
+            &::after
+                content: ''
+                position: absolute
+                bottom: -0.5rem
+                left: 50%
+                transform: translateX(-50%)
+                width: 50%
+                height: 1px
+                background: #737373
+
+
+        ul
+            display: grid
+           
+            grid-template-columns: 1fr 1fr
+            
+            
+            li
+                flex: 1
+               
+                margin: 1.5rem
+
+                span.friend-createdat
+                    font-size: 0.6rem
+
+                a
+                    img
+                        width: 45px
+                        height: 45px
+                        border-radius: 100%

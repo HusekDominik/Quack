@@ -1,0 +1,51 @@
+.account-page
+    padding-top: $navbar-height
+    min-height: 100vh
+    background-image: url("../../../src/images/form-background-smaller.png")
+    background-position: center center
+    background-repeat: no-repeat
+    background-attachment: fixed
+    
+
+
+    &__container
+        margin: 2.5rem auto 0 auto
+        display: flex
+        max-width: 1000px
+        width: 100%
+        border-radius: 0.6rem
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25)
+        background: #fff
+        min-height: 610px
+
+        &__content
+            width: 100%
+            
+    
+
+    .account-settings
+        width: 400px
+        border-right: 1px solid #d7d7d7
+
+        ul
+            padding: 1rem 0
+
+            li
+                list-style: none
+                
+
+                a
+                    text-decoration: none
+                    color: #3c3c3c
+                    padding: 1rem 1rem 1rem 2rem
+                    display: block
+                    border-left: 4px solid transparent
+
+                    &.active 
+                        color: #49b68c
+                        background: #f2f2f2
+                        border-color: #49b68c
+
+                
+                &.active
+                    border-left: 3px solid $primary-color

@@ -1,0 +1,85 @@
+.post-comment
+    display: flex
+    flex-direction: row
+    padding-bottom: 1.4rem
+
+        
+
+    &__container
+        display: flex
+        flex-direction: column
+        margin-right: 0.6rem
+        
+
+        p
+            font-size: 0.6rem
+            color: #3c3c3c
+            margin-top: 0.3rem
+            text-align: center
+
+        &__img
+            width: 40px
+            height: 40px
+            border-radius: 100%
+        
+
+            img
+                width: 100%
+                height: 100%
+                border-radius: 100%
+                object-fit: cover
+    &__content
+        background: #dbe2e8
+        position: relative
+        border-radius: 0.7rem
+        padding: 0.4rem 0.6rem 0.25rem 0.6rem
+
+        a
+            color: #3c3c3c
+            text-decoration: none
+        
+
+        h2
+            color: #3c3c3c
+            font-family: Myriad-Semi
+            font-weight: normal
+        
+        p
+            line-height: 1.6
+            color: #3c3c3c
+
+        
+        &__likes
+            position: absolute
+            background: #dbe2e8
+            bottom: -0.76rem
+            left: 0.7rem
+            border-radius: 0.7rem
+            
+
+            button
+                outline: none
+                border: 0
+                background: #dbe2e8
+                cursor: pointer
+                border-radius: 0.7rem
+                font-family: Myriad-Regular
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: center
+
+                &:hover img 
+                    filter: invert(36%) sepia(78%) saturate(5414%) hue-rotate(334deg) brightness(94%) contrast(100%)
+
+                &.active img
+                    filter: invert(36%) sepia(78%) saturate(5414%) hue-rotate(334deg) brightness(94%) contrast(100%)
+
+
+
+                img
+                    width: 13px
+                    height: 13px
+                    margin-right: 0.3rem
+                    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(45deg) brightness(104%) contrast(102%)
+
