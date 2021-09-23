@@ -5,6 +5,9 @@ import path from "path";
 import pool from "../database/connect";
 import protectedByToken from '../token/getAcessToken';
 import { v4 as uuidv4 } from 'uuid';
+import redisClient from "../redis/client";
+
+const MESSAGES_EXPIRATION = 3600;
 
 const router = express.Router();
 
@@ -82,6 +85,12 @@ router.post("/add", protectedByToken, uploadMultiple.array('chat_file', 10), asy
 		const message = await pool.query("INSERT INTO chat_message(conversation_id, sender_id, message_text, message_img) VALUES ($1, $2, $3, $4) RETURNING *", [conversationID, senderID, messageText, onlyPath]);
 
 
+		redisClient.llen(`messages-${conversationID}`, (error, number) => {
+			if (error) console.error(error);
+			if (number === 20) redisClient.rpop(`messages-${conversationID}`);
+		})
+
+		redisClient.lpush(`messages-${conversationID}`, JSON.stringify(message.rows));
 		return res.status(200).json({
 			message: message.rows
 
@@ -127,22 +136,40 @@ router.get("/get/:conversationID/:skipAmount", protectedByToken, async (req: any
 
 
 /**
- * @keyword GET - FETCH MORE MESSAGES
- * @description fetches more messages from conversation
+ * @keyword GET - FETCH FIRST MESSAGES
+ * @description fetches first 20 messages from conversation
  * @route /message/first/messages/
  * @param conversationID = "conversationID to which we are going to fetch more messages"
  */
 
-router.get("/first/messages/:conversationID", protectedByToken, async (req: any, res: express.Response): Promise<express.Response> => {
+router.get("/first/messages/:conversationID", protectedByToken, async (req: any, res: express.Response) => {
 	try {
 		const conversationID = req.params.conversationID;
 
-		const messages = await pool.query("SELECT * FROM chat_message WHERE conversation_id = $1 ORDER BY message_created_at DESC LIMIT 25", [conversationID]);
+		redisClient.lrange(`messages-${conversationID}`, 0, -1, async (error, data: any) => {
+			if (error) return res.status(500).send('Error');
 
-		const correctOrderMessages = messages.rows.reverse();
+			console.log(data);
+			if (data.length > 0) {
+				return res.status(200).json({
+					messages: JSON.parse(data[0])
+				})
+			}
+			else {
 
-		return res.status(200).json({
-			messages: correctOrderMessages
+				const messages = await pool.query("SELECT * FROM chat_message WHERE conversation_id = $1 ORDER BY message_created_at DESC LIMIT 20", [conversationID]);
+
+				const correctOrderMessages = messages.rows.reverse();
+
+				console.log(messages.rows);
+
+				redisClient.lpush(`messages-${conversationID}`, JSON.stringify(correctOrderMessages));
+
+				return res.status(200).json({
+					messages: correctOrderMessages
+				})
+			}
+
 		})
 
 	}

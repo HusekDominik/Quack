@@ -155,7 +155,7 @@ const Chat: React.FC<ChatProps> = (props: ChatProps) => {
 					const response = await axios.get(`http://localhost:8000/message/first/messages/${chatID}`, config);
 
 					
-					response.data.messages.length < 25 ? setNoMoreMessages(true) : setNoMoreMessages(false);
+					response.data.messages.length < 20 ? setNoMoreMessages(true) : setNoMoreMessages(false);
 					setChatIDState(chatID);
 					setChatMessages(response.data.messages.length);
 					dispatch({type: 'GET_FIRST_MESSAGES', payload: response.data.messages});
@@ -356,7 +356,7 @@ const Chat: React.FC<ChatProps> = (props: ChatProps) => {
 		}
 		catch(error){
 			console.log(error);
-			console.log(error.response);
+			
 		}
 	}
 	return (
